@@ -1,0 +1,206 @@
+/* Specials */
+
+.highlight {
+  position: relative;
+  isolation: isolate;
+  color: var(--accent-clr);
+
+  &::before {
+    left: var(--left, -1rem);
+    background-image: linear-gradient(
+      45deg,
+      hsla(from var(--accent-clr) h s l / 0.3),
+      transparent
+    );
+    width: 10%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.h2-like-h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* main */
+
+body {
+  color-scheme: dark light;
+  background-color: var(--primary-clr);
+  color: var(--text-clr);
+  min-height: 100vh;
+}
+
+.hero__sec {
+  min-height: 90vh;
+  min-height: 90svh;
+
+  & h1 {
+    font-size: clamp(3rem, 6vw, 4rem);
+    margin-bottom: var(--gap);
+  }
+
+  /* Large Devices */
+  @media (width > 992px) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    padding-left: 6rem;
+    container-type: inline-size;
+
+    > * {
+      grid-row: 1;
+    }
+
+    .hero__text {
+      grid-column: 1 / span 2;
+      z-index: 1;
+      background-color: hsla(from var(--primary-clr) h s calc(l * 1.2) / 0.6);
+      box-shadow: 0px 4px 4px rgba(0 0 0 / 0.2);
+      padding: 2cqi;
+    }
+
+    .hero__image {
+      grid-column: 2 / 7;
+      background-image: url(/images/house.jpg);
+      height: 100%;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      background-color: hsla(from var(--primary-clr) h s l / 0.3);
+      background-blend-mode: overlay;
+
+      .box {
+        --box-width: 120px;
+        background-color: var(--accent-clr);
+        height: 100px;
+
+        &:first-child {
+          background-image: url("/images/house2.jpg");
+          width: var(--box-width);
+        }
+
+        &:last-child {
+          width: calc(var(--box-width) + 30px);
+          color: var(--primary-clr);
+          text-align: center;
+          align-content: center;
+        }
+      }
+    }
+  }
+}
+
+.architures__sec {
+  background-color: var(--alt-primary-clr);
+  padding: var(--padding);
+
+  & h2 {
+    text-align: center;
+    margin-bottom: var(--gap);
+  }
+
+  .architures__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+
+    & .card {
+      display: grid;
+      gap: var(--tiny-gap);
+      position: relative;
+      isolation: isolate;
+
+      &::after {
+        width: 90%;
+        height: 3px;
+        bottom: 0;
+        left: 1rem;
+        background-color: var(--accent-clr);
+      }
+
+      .icon__parent {
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+
+        > * {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.about-us-sec {
+  --height: 70vh;
+  @media (width > 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: var(--height);
+    gap: calc(var(--gap) + 2rem);
+
+    .image__parent {
+      height: calc(var(--height) - 10vh);
+      position: relative;
+
+      &::after {
+        --_size: 30%;
+        --_pos: -1.3rem;
+        width: var(--_size);
+        height: var(--_size);
+        outline: 1px solid var(--text-clr);
+        background-image: url("/images/client2.jpg");
+        right: var(--_pos);
+        bottom: var(--_pos);
+      }
+    }
+
+    .about-us-text {
+      align-content: center;
+
+      > * {
+        margin-bottom: var(--tiny-gap);
+      }
+
+      & p,
+      & button {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+.services__sec {
+  padding: var(--padding);
+  background-image: url("/images/house2.jpg");
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    inset: 0;
+    background-color: hsla(from var(--primary-clr) h s l / 0.9);
+    z-index: -1;
+  }
+
+  & .first__child {
+    position: sticky;
+    top: 0;
+    height: max-content;
+
+    > * {
+      margin-bottom: var(--tiny-gap);
+    }
+  }
+
+  @media (width > 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--large-gap);
+
+    & .last__child {
+      display: grid;
+      gap: var(--gap);
+    }
+  }
+}
