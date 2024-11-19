@@ -1,0 +1,64 @@
+form {
+  width: 95%;
+  min-height: 60vh;
+  margin: 1rem auto;
+  padding: 2cqi;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  & button {
+    display: block;
+    margin: 1rem auto;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    color: whitesmoke;
+    transition: scale 500ms;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+
+body {
+  background-image: linear-gradient(midnightblue, black);
+  min-height: 100vh;
+  color: whitesmoke;
+}
+
+input {
+  font-size: 1.2rem;
+  font-family: inherit;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  display: block;
+  background-color: lightgray;
+
+  &:focus-visible {
+    outline: 2px solid rgb(51, 58, 46);
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+}
+
+.input__group {
+  margin-top: var(--gap);
+  position: relative;
+  min-height: 5rem;
+  padding-top: 1.5rem;
+
+  & p {
+    font-size: 0.8rem;
+
+    &.valid {
+      color: lime;
+    }
+
+    &.invalid {
+      color: salmon;
+    }
+  }
+}

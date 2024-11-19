@@ -1,15 +1,12 @@
-import { Route, Routes } from "react-router-dom";
-import Nav from "./components/Navigations/Nav";
-import HomePage from "./Tenerife_Project/Home/HomePage";
+// import Form from "./Second/Form";
+
+import WordGuessGame from "./WordGuess/WordGuessGame";
 
 function App() {
   return (
     <>
-      <Nav />
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+      {/* <Form /> */}
+      <WordGuessGame />
     </>
   );
 }
